@@ -1,0 +1,31 @@
+#include <stdio.h>
+
+int main() {
+
+    int nVoltas=0, melhorVolta=0;
+    double tempo, tempoMedio=0.0, somaTempo=0.0, menorTempo=0.0;
+
+    do {
+        printf("Digite o numero de voltas: ");
+        scanf("%d", &nVoltas);
+    } while (nVoltas<=0 || nVoltas>=15);
+    for (int i = 1; i < nVoltas; ++i) {
+        printf("Digite o tempo da volta %d\n", i);
+        scanf("%lf", &tempo);
+        if (i==1){
+            menorTempo = tempo;
+            melhorVolta = 1;
+        }
+        if(tempo<menorTempo){
+            menorTempo = tempo;
+            melhorVolta = i;
+        }
+        somaTempo+=tempo;
+    }
+    tempoMedio = somaTempo/nVoltas;
+    printf("Melhor volta em tempo: %lf \n", menorTempo);
+    printf("Melhor volta numerica: %d \n", melhorVolta);
+    printf("tempo medio das voltas: %d \n", tempoMedio);
+
+    return 0;
+}
