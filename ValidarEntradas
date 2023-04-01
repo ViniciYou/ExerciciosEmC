@@ -1,0 +1,18 @@
+#include <stdio.h>
+
+int main() {
+
+    int i, valor;
+
+    printf("Digite o maior valor (impar): ");
+    scanf("%d", &valor);
+
+    for (i = 1; i <= valor; i++) {
+        for (valor = i; valor <= 9; valor++) {
+            printf("%d ", valor);
+        }
+        printf("\n");
+    }
+
+    return 0;
+}
