@@ -1,0 +1,45 @@
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+
+int main() {
+    //Tempo aleatório
+    srand(time(NULL));
+
+    //gerar um número aleatório até 100
+    int magico = rand() %100;
+    int palpite;
+    int cont=0;
+
+    //Loop (Repetição - Enquanto verdadeiro)
+    while(1){
+        printf("Digite seu palpite [0...99]- Tentativa [%d/5] ",cont);
+        scanf("%d",&palpite);
+        cont++;
+        //Resultado
+        //printf("%d", magico);
+
+        if(palpite == magico){
+            printf("Parabens! Voce venceu!");
+            return 0;
+        } else{
+
+
+
+        printf("Voce errou! :(\n");}
+        if(palpite>magico){
+            printf("Seu palpite foi ALTO\n");
+        } else {
+            printf("Seu palpite foi BAIXO\n");
+        }
+
+
+        //Contador para chances
+        if(cont==6) {
+            printf("Suas chanches terminaram! Voce perdeu!\n O valor era:%d", magico);
+            return 0;
+        }
+    }
+    return 0;
+}
