@@ -1,0 +1,28 @@
+#include <stdio.h>
+
+int main() {
+    int n, x,soma,count;
+
+    do {
+        printf("Digite o valor de divisiveis (N): ");
+        scanf("%d", &n);
+    } while (n <= 0);
+
+    do {
+        printf("Digite a ser dividido (X): ");
+        scanf("%d", &x);
+    } while (x <= 0);
+
+    for (int i = 1; i <= x; i++) {
+        if (x % i == 0) {
+            soma += i;
+            count++;
+
+            if (count == n)
+                break;
+            }
+            }
+                printf("A somatoria dos (N)%d primeiros divisores de %d(X) eh %d\n", n, x, soma);
+
+    return 0;
+}
